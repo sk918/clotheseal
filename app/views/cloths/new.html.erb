@@ -1,0 +1,46 @@
+<div class='font'>
+<header class='top-page-header'>
+ <div class='nav'>
+   <div class='left-content'>
+     <%= link_to image_tag("logo_black.png", class:"clotheseal-icon"), "/" %>
+   </div>
+    <ul class='lists-right'>
+       <li><%#= @user.nickname, class: "user-nickname"%></li>
+       <li><%= link_to 'My Page', "/users/#{current_user.id}", class: "user-page"%></li> 
+       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
+    </ul>
+  </div>
+</header>
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">ファッション情報を入力</h2>
+    <%= form_with(model: @cloth, local: true) do |f| %>
+
+    <%#= render 'shared/error_messages', model: f.object %>
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        ファッション画像をアップロード
+      </div>
+      <%= f.file_field :image, id:"" %>
+    </div>
+    <%# /出品画像 %>
+    <%# 着用した日付を選択 %>
+    <div class="new-clothes">
+      <div class="weight-bold-text">
+        着用した日付を選択
+      </div>
+      <%= f.date_field :wear_day, class: 'date-select' %>
+    </div>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "保存する", class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+    <% end %>
+  </div>
+</div>
+</div>
+  <%= render "shared/footer" %>

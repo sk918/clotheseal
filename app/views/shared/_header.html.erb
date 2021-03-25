@@ -1,4 +1,5 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
+<div class='font'>
 <header class='top-page-header'>
  <div class='nav'>
    <div class='left-content'>
@@ -6,9 +7,9 @@
    </div>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-       <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li> 
-       <li><%= link_to '投稿する', root_path, class: "clothes-item"%></li> 
-       <li><%= link_to 'My Page', root_path, class: "user-page"%></li> 
+       <li><%#= @user.nickname, class: "user-nickname"%></li>
+       <li><%= link_to '+', new_cloth_path, class: "clothes-item"%></li> 
+       <li><%= link_to 'My Page', "/users/#{current_user.id}", class: "user-page"%></li> 
        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
        <% else %>
        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
@@ -17,3 +18,4 @@
     </ul>
   </div>
 </header>
+</div>

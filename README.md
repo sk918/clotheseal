@@ -1,5 +1,5 @@
 ## アプリケーション名
-clotheseal(クロージール)
+clotheseal(クローシール)
 
 ## アプリケーション概要	
 このアプリケーションでできることを記述しましょう。
@@ -43,14 +43,14 @@ clotheseal(クロージール)
 
 #### Association
 
-- has_many :clothes
+- has_many :cloths
 
 
-### clothes テーブル
+### cloths テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| wear_date          | date       | null: false                    |
+| wear_day           | date       | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 #### Association
