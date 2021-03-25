@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">ファッション情報を変更</h2>
+    <%= form_with(model: @cloth, local: true) do |f| %>
+
+    <%#= render 'shared/error_messages', model: f.object %>
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        ファッション画像をアップロード
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
+    <%# 着用した日付を選択 %>
+    <div class="new-clothes">
+      <div class="weight-bold-text">
+        着用した日付を選択
+      </div>
+      <%= f.date_field :wear_day, class: 'date-select' %>
+    </div>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "変更する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+  <%= render "shared/footer" %>

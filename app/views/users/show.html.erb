@@ -1,0 +1,53 @@
+<header class='top-page-header'>
+ <div class='nav'>
+   <div class='left-content'>
+     <%= link_to image_tag("logo_black.png", class:"clotheseal-icon"), "/" %>
+   </div>
+    <ul class='lists-right'>
+       <li><%#= @user.nickname, class: "user-nickname"%></li>
+       <li><%= link_to '+', new_cloth_path, class: "clothes-item"%></li> 
+       <li><%= link_to 'トップページ', cloths_path, class: "clothes-item"%></li> 
+       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
+    </ul>
+  </div>
+</header>
+<div class='main2'>
+  <div class='left-showcontents'>
+    <h2 class="page-heading">
+        <%= "ユーザー登録情報"%>
+    </h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th class="table__col1">ニックネーム</th>
+          <td class="table__col2"><%= @nickname %></td>
+        </tr>
+        <tr>
+          <th class="table__col1">メールアドレス</th>
+          <td class="table__col2"><%= @email %></td>
+        </tr>
+        <tr>
+          <th class="table__col1">生年月日</th>
+          <td class="table__col2"><%= @birthday %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="sell-btn-contents">
+      <%=link_to '変更する', edit_user_registration_path, class:"sell-btn" %>
+    </div>
+  </div>
+  <div class='right-showcontents'>
+    <h2 class="page-heading">
+        <%= "服装一覧"%>
+    </h2>
+    <div class="contents row">
+    <div class="display">
+      <% @cloths.each do |cloth| %>
+        <%= render partial: "cloths/cloth", locals: { cloth: cloth } %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer"%>

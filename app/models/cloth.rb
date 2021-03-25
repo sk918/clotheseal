@@ -1,5 +1,6 @@
 class Cloth < ApplicationRecord
   belongs_to :user
+  has_one_attached :image
 
-  validates :birthday, presence: true
+  validates :wear_day, presence: true
 end

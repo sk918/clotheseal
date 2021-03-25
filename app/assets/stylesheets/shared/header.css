@@ -74,3 +74,15 @@ text-decoration: none;
   text-decoration: none;
   color: white;
 }
+
+.second-header-content{
+  width: 100vw;
+  background-color: black;
+  text-align: center;
+}
+
+.clotheseal2-icon {
+  width: 10vw;
+  align-items: center;
+}
+
