@@ -1,6 +1,6 @@
 class ClothsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
-  before_action :set_cloth, only: [:show, :edit]
+  before_action :set_cloth, only: [:show, :edit, :update]
 
 
   def index
@@ -26,8 +26,7 @@ class ClothsController < ApplicationController
   end
   
   def update
-    cloth = Cloth.find(params[:id])
-    if cloth.update(cloth_params)
+    if @cloth.update(cloth_params)
       redirect_to cloth_path
     else
       render :edit
@@ -38,6 +37,11 @@ class ClothsController < ApplicationController
     cloth = Cloth.find(params[:id])
     cloth.destroy
     redirect_to "/users/#{current_user.id}"
+  end
+
+  def search
+    @cloth = Cloth.ransack(params[:cloth])
+    @results = @cloth.result
   end
   
 

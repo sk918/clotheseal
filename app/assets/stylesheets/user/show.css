@@ -137,3 +137,51 @@
   .font{
     font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','Arial Rounded MT Bold',sans-serif;
   }
+
+  .nickname{
+  text-decoration: none;
+  margin-right: 3vw;
+  color: white;
+  font-size: 30px;
+  }
+
+  .search-form {
+    text-align: center;
+    padding-top: 32px;
+  }
+  
+  .search-form .search-input {
+    width: 30%;
+    margin-right: 10px;
+  }
+  
+  .search-form .search-btn {
+    width: 10%;
+  }
+
+  .date-search{
+    width: 175px;
+    margin-top: 5px;
+    margin-right: 10px;
+    height: 45px;
+    padding-left: 15px;
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','Arial Rounded MT Bold',sans-serif;
+  }
+
+  .line{
+    display: flex;
+  }
+
+  .edit{
+    margin: 15px;
+    background-color: black;
+    color: white;
+  }
+
+
+
+  .name{
+    background-color: black;
+    color: white;
+  }
+

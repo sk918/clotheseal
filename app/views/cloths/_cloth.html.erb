@@ -2,22 +2,13 @@
 <div class="margin">
 <div class="content_post">
 <%= image_tag cloth.image %>
-  <div class="more">
-    <span><%= image_tag 'arrow_top.png' %></span>
-    <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_cloth_path(cloth.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', cloth_path(cloth.id), method: :delete %>
-        </li>
-    </ul>
-  </div>
   <span class="name">
       <%= cloth.wear_day %>
-      <%= link_to '編集', edit_cloth_path(cloth.id), method: :get %>
-      <%= link_to '削除', cloth_path(cloth.id), method: :delete %>
   </span>
 </div>
+<div class='line'>
+      <%= link_to '編集', edit_cloth_path(cloth.id), method: :get, class:'edit' %>
+      <%= link_to '削除', cloth_path(cloth.id), method: :delete, class:'edit'%>
+  </div>
 </div>
 </div>
